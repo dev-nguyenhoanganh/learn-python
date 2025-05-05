@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from app.core.config import settings
 
 # Import and include routers
-from app.api.endpoints import auth, chat, files
+from app.api.endpoints import auth, chat, files, gemini
 
 # Create FastAPI app
 app = FastAPI(
@@ -27,6 +27,7 @@ app.add_middleware(
 app.include_router(auth.router, prefix=settings.API_V1_STR, tags=["auth"])
 app.include_router(chat.router, prefix=settings.API_V1_STR, tags=["chat"])
 app.include_router(files.router, prefix=settings.API_V1_STR, tags=["files"])
+app.include_router(gemini.router, prefix=settings.API_V1_STR, tags=["gemini"])
 
 # Mount thư mục build của React
 if (os.path.isdir(settings.WEB_FOLDER)):

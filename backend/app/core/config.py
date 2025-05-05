@@ -15,11 +15,14 @@ class Settings(BaseSettings):
   # Secret key for signing tokens or sensitive data
   SECRET_KEY: str = "Secret key"
 
+  # Google API key for external services
+  GOOGLE_API_KEY: str = "API KEY"
+
   # Token expiration time (in minutes), default is 8 days
   ACESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
 
   # Static folder configuration
-  WEB_FOLDER: str = "www"  # Path to the static web folder
+  WEB_FOLDER: str = "https://fantastic-space-acorn-9j4jjgrrq94cprpj-8000.app.github.dev"  # Path to the static web folder
 
   # Database configuration
   DATABASE_URL: str = "sqlite:///./sql_app.db"  # Database connection URL

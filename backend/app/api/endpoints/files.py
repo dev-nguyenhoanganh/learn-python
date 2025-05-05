@@ -69,7 +69,7 @@ async def upload_file(file: UploadFile = File(...)):
 
         # Ghi nội dung văn bản đã trích xuất vào file .txt trong thư mục uploads
         text_file_path = os.path.join(settings.UPLOAD_DIR, file.filename + ".txt")
-        async with aiofiles.open(text_file_path, "w") as text_file:
+        async with aiofiles.open(text_file_path, "w", encoding="utf-8") as text_file:
             await text_file.write(extracted_text)
 
         # Chuyển đổi nội dung văn bản đã trích xuất thành vector (phù hợp cho mô hình)
